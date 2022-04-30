@@ -72,7 +72,7 @@ class BinarySearchTree {
       }
 
       if (node.data === value) {
-        return node.data;
+        return node;
       }
 
       return value < node.data
@@ -119,9 +119,9 @@ class BinarySearchTree {
         while (minFromRight.left) {
           minFromRight = minFromRight.left;
         }
-        node.data = minFromRight.value;
+        node.data = minFromRight.data;
 
-        node.right = removeNode(node.right, minFromRight.value);
+        node.right = removeNode(node.right, minFromRight.data);
 
         return node;
       }
